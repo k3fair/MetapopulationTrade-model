@@ -1,4 +1,4 @@
-%     Script runs experiment with heterogeneous patch efficiency
+%     Script runs simulations with heterogeneous patch efficiency
 %     Copyright (C) 2021 Kathyrn R Fair
 % 
 %     This program is free software: you can redistribute it and/or modify
