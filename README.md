@@ -26,11 +26,11 @@ All data needed to run scripts are included in the "InputFiles" folder.
 
 * **Ky_70_params_NOurban_Feb5.csv** contains parameters from global fitting under a high yield scenario
 
-* **Networks_forParameterPlanes** folder contains networks required to run the **Metapop_ParameterPlanes.m** simulations
+* **Networks_forParameterPlanes** folder contains networks required to run the Metapop_ParameterPlanes.m simulations
 
-* **Networks_forNetworkExperiment** folder contains networks required to run the **Metapop_NetworkExperiment.m** simulations
+* **Networks_forNetworkExperiment** folder contains networks required to run the Metapop_NetworkExperiment.m simulations
 
-* **Networks_forHeterogeneityExperiments** folder contains networks required to run the **Metapop_HeterogeneityEfficiency.m** and **Metapop_HeterogeneityImportDemand.m** simulations
+* **Networks_forHeterogeneityExperiments** folder contains networks required to run the Metapop_HeterogeneityEfficiency.m and Metapop_HeterogeneityImportDemand.m simulations
 
 
 ## System & hardware requirements
