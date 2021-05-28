@@ -7,14 +7,30 @@ All data needed to run scripts are included in the "InputFiles" folder.
 
 ## Scripts
 
-* **covidHier0.35Lite_singlepatch_scenarios.R** runs simulations for different NPI scenarios, visualizes results and outputs figure
+* **Metapop_Globalfit.m** runs global paramter fitting under low & high yield scenarios.
 
+* **Metapop_ParameterPlanes.m** runs simulations sampling different points in the parameter plane for either (beta, gamma) or (beta_A, beta_I)
 
+* **Metapop_NetworkExperiment.m** runs simulations on networks with different densities and rewiring probabilities.
+
+* **Metapop_HeterogeneityEfficiency.m** runs simulations with heterogeneous patch efficiency (i.e. heterogeneous gamma-values)
+
+* **Metapop_HeterogeneityImportDemand.m** runs simulations with heterogeneous patch import consumption demand (i.e. heterogeneous beta_I-values)
 
 
 ## Input files
 
-* **COVIDsim_CCS_fadeoutdat_X.R**, where X is a placeholder for the parameter being varied, contains data on fade-outs and infections from simulations generated using covidHier0.35Lite_singlepatch_parametervary.R
+* **Meta_FittingTS_Global_Feb1.csv** contains data from the United Nations on global population size (https://population.un.org/wpp/Download/Standard/Population/), food supply, agricultural land area, total land area, etc. (http://www.fao.org/faostat/en/#home)
+
+* **Ky_35_params_NOurban_Feb5.csv** contains parameters from global fitting under a low yield scenario
+
+* **Ky_70_params_NOurban_Feb5.csv** contains parameters from global fitting under a high yield scenario
+
+* **Networks_forParameterPlanes** folder contains networks required to run the **Metapop_ParameterPlanes.m** simulations
+
+* **Networks_forNetworkExperiment** folder contains networks required to run the **Metapop_NetworkExperiment.m** simulations
+
+* **Networks_forHeterogeneityExperiments** folder contains networks required to run the **Metapop_HeterogeneityEfficiency.m** and **Metapop_HeterogeneityImportDemand.m** simulations
 
 
 ## System & hardware requirements
