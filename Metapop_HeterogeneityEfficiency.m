@@ -1,16 +1,16 @@
-%     Script runs simulations with heterogeneous patch efficiency
+%     Metapop_HeterogeneityEfficiency.m runs simulations with heterogeneous patch efficiency
 %     Copyright (C) 2021 Kathyrn R Fair
-% 
+%
 %     This program is free software: you can redistribute it and/or modify
 %     it under the terms of the GNU General Public License as published by
 %     the Free Software Foundation, either version 3 of the License, or
 %     (at your option) any later version.
-% 
+%
 %     This program is distributed in the hope that it will be useful,
 %     but WITHOUT ANY WARRANTY; without even the implied warranty of
 %     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 %     GNU General Public License for more details.
-% 
+%
 %     You should have received a copy of the GNU General Public License
 %     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
@@ -102,17 +102,17 @@ storage_total=zeros(length(tspan)*N*nsims,16);
 loop1=1;
 oops=0;
 for loop1=1:nsims
-    
+
 net = csvread(fstruct(loop1).name,1); %the 1 indicates we skip the header row introduced by writing in R
 file.string=strsplit(fstruct(loop1).name, '_');
 neigh =str2double(file.string(4));
 rewire=str2double(file.string(5));
 realization=str2double(file.string(7));
-    
+
     beta_I = 0.25;
     beta_A=beta_I;
-    
-%generate vectors of randomly ordered gamma values 
+
+%generate vectors of randomly ordered gamma values
 gamma_low = 2.5;
 gamma_high = 7.5;
 gammavec_temp =  [gamma_high*ones(1,N*prop_high) gamma_low*ones(1,(N*(1-prop_high)))] ;
@@ -124,7 +124,7 @@ gammavec_I = gammavec_A;
 [Tic, Ric] = ode45(incompletenetCall, tspan, init, options);
 
 if sum(sum(isnan(Ric)))==0 %excludes runs where variables go nan
-    
+
 %save data on imports
 Y = Ric(:,1:4:4*N);
 P = Ric(:,2:4:4*N);
@@ -138,7 +138,7 @@ b_I=zeros(length(tspan),N);
 for i=1:length(Tic)
     for j=1:N
     b_A(i,j) = 1/(1+ exp(gammavec_A(j)*(beta_A- ((P(i,j))/(F(i,j))))));
-    b_I(i,j) = 1/(1+ exp(gammavec_I(j)*(beta_I- ((P(i,j))/(F(i,j)))))); 
+    b_I(i,j) = 1/(1+ exp(gammavec_I(j)*(beta_I- ((P(i,j))/(F(i,j))))));
     end
 end
 
@@ -147,13 +147,13 @@ lambda=zeros(length(tspan),N);
 
 for i=1:length(Tic)
     for j=1:N
-        
+
        if (sum(net(j,:)))
         lambda(i,j) = 1/sum(net(j,:)*transpose(b_I(i,:)));
     else
         lambda(i,j) = 0;
        end
-    
+
     end
 end
 
@@ -162,9 +162,9 @@ imports=zeros(length(tspan),N);
 
 for i=1:length(Tic)
     for j=1:N
-        
+
     imports(i,j) = b_I(i,j)*(sum(food*(1-spoil)*(eportion).*transpose(net(:,j)).*Y(i,:).*A(i,:).*lambda(i,:)));
-        
+
     end
 end
 
@@ -175,7 +175,7 @@ storage_run=zeros(length(tspan)*N,16);
 
 counter_run=1;
 for loop2=1:4:4*N
-    
+
     for loop3=1:length(Tic)
             storage_ts(loop3,:) = [length(net(:,1)) neigh rewire gammavec_I(node) beta_I gammavec_A(node) beta_A node Tic(loop3) Ric(loop3,loop2) Ric(loop3,loop2+1) Ric(loop3,loop2+2) Ric(loop3,loop2+3) realization prop_high imports(loop3,node) ];
     end
@@ -183,7 +183,7 @@ for loop2=1:4:4*N
         storage_run((rowadd-(length(tspan)-1)):rowadd,:)=storage_ts;
         counter_run=counter_run+1;
         node=node+1;
-      
+
 end
 
         rowadd_tot=loop1*length(tspan)*N;
@@ -260,7 +260,7 @@ f=[ Y(1)*r_y*(1-(Y(1)/K_y)); %Yield DE
     food*(1-spoil)*Y(1)*A(1)*(1 - lambda(1)*(eportion)*(net(1,:)*b_I(:))) + b_I(1)*(sum(food*(1-spoil)*(eportion).*net(:,1).*Y(:).*A(:).*lambda(:))) - F(1);]; %Food supply DE
 
 for k = 2:N
-    f = [f; Y(k)*r_y*(1-(Y(k)/K_y)); 
+    f = [f; Y(k)*r_y*(1-(Y(k)/K_y));
         P(k)*(a0*exp(-sigma*((F(k))/P(k)))*(rho-(P(k)/(F(k)))) - delta);
         kappa*b_A(k)*(T_patch-A(k))-zeta*A(k);
         food*(1-spoil)*Y(k)*A(k)*(1 - lambda(k)*(eportion)*(net(k,:)*b_I(:))) + b_I(k)*(sum(food*(1-spoil)*(eportion).*net(:,k).*Y(:).*A(:).*lambda(:))) - F(k);];
@@ -269,4 +269,3 @@ end
 t;
 
 end
-
