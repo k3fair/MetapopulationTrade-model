@@ -9,14 +9,23 @@ All data needed to run scripts are included in the "InputFiles" folder.
 
 * **Metapop_Globalfit.m** runs global paramter fitting under low & high yield scenarios.
 
+* **Metapop_Globalfit_Viz.m** visualizes output from Metapop_Globalfit.m
+
 * **Metapop_ParameterPlanes.m** runs simulations sampling different points in the parameter plane for either (beta, gamma) or (beta_A, beta_I)
 
-* **Metapop_NetworkExperiment.m** runs simulations on networks with different densities and rewiring probabilities.
+* **Metapop_ParameterPlanes_Viz.m** visualizes output from Metapop_ParameterPlanes.m
 
-* **Metapop_HeterogeneityEfficiency.m** runs simulations with heterogeneous patch efficiency (i.e. heterogeneous gamma-values)
+* **Metapop_NetworkExp.m** runs simulations on networks with different densities and rewiring probabilities.
 
-* **Metapop_HeterogeneityImportDemand.m** runs simulations with heterogeneous patch import consumption demand (i.e. heterogeneous beta_I-values)
+* **Metapop_NetworkExp_Viz.m** visualizes output from Metapop_NetworkExp.m
 
+* **Metapop_HeterogeneityResponsiveness.m** runs simulations with heterogeneous patch responsiveness (i.e. heterogeneous gamma-values)
+
+* **Metapop_HeterogeneityImportThreshold.m** runs simulations with heterogeneous patch import demand thresholds (i.e. heterogeneous beta_I-values)
+
+* **Metapop_HeterogeneityExp_Viz.m** visualizes output from Metapop_HeterogeneityResponsiveness.m and Metapop_HeterogeneityImportThreshold.m
+
+* **Metapop_HeterogeneityExp_betaprop_Viz.m** visualizes output from Metapop_HeterogeneityImportThreshold.m across a broader range of values for the percent of patches with high (vs. low) import demand thresholds
 
 ## Input files
 
@@ -26,12 +35,15 @@ All data needed to run scripts are included in the "InputFiles" folder.
 
 * **Ky_70_params_NOurban_Feb5.csv** contains parameters from global fitting under a high yield scenario
 
-* **Networks_forParameterPlanes** folder contains networks required to run the Metapop_ParameterPlanes.m simulations
+* **Networks_forParameterPlanes** folder contains networks required to run Metapop_ParameterPlanes.m
 
-* **Networks_forNetworkExperiment** folder contains networks required to run the Metapop_NetworkExperiment.m simulations
+* **Networks_forNetworkExperiment** folder contains networks required to run Metapop_NetworkExperiment.m
 
-* **Networks_forHeterogeneityExperiments** folder contains networks required to run the Metapop_HeterogeneityEfficiency.m and Metapop_HeterogeneityImportDemand.m simulations
+* **Networks_forHeterogeneityExperiments** folder contains networks required to run Metapop_HeterogeneityEfficiency.m and Metapop_HeterogeneityImportDemand.m
 
+* **NetworkStatistics_forNetworkExperiment** folder contains statistics for characterising networks, required to run Metapop_NetworkExp_Viz.m
+
+* **NetworkStatistics_forHeterogeneityExperiments** folder contains statistics for characterising networks, required to run Metapop_HeterogeneityExp_Viz.m and Metapop_HeterogeneityExp_betaprop_Viz.m
 
 ## System & hardware requirements
 
@@ -44,4 +56,3 @@ All data needed to run scripts are included in the "InputFiles" folder.
 All software should install within a few minutes on a standard computer, the versions listed here are those the scripts have been tested on.
 
  * MATLAB R2016b https://www.mathworks.com/products/matlab.html
-
