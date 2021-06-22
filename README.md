@@ -1,5 +1,5 @@
 # MetapopulationTrade-Model
-Simulation and visualization code for manuscript by Fair, Bauch, and Anand (2021). Model describes a system where agricultural land area, food supply, and human population growth are coupled. Associated preprint is posted at ???.
+Simulation, model fitting, analysis and visualization code for manuscript by Fair, Bauch, and Anand (2021). Model describes a system where agricultural land area, food supply, and human population growth are coupled. Associated preprint is posted at ???.
 
 To run a set of simulations make all required option selections (detailed within each script) and launch the appropriate script.
 
@@ -9,23 +9,23 @@ All data needed to run scripts are included in the "InputFiles" folder.
 
 * **Metapop_Globalfit.m** runs global paramter fitting under low & high yield scenarios.
 
-* **Metapop_Globalfit_Viz.m** visualizes output from Metapop_Globalfit.m
+* **Metapop_Globalfit_Viz.m** analyzes and visualizes output from Metapop_Globalfit.m
 
 * **Metapop_ParameterPlanes.m** runs simulations sampling different points in the parameter plane for either (beta, gamma) or (beta_A, beta_I)
 
-* **Metapop_ParameterPlanes_Viz.m** visualizes output from Metapop_ParameterPlanes.m
+* **Metapop_ParameterPlanes_Viz.m** analyzes and visualizes output from Metapop_ParameterPlanes.m
 
 * **Metapop_NetworkExp.m** runs simulations on networks with different densities and rewiring probabilities.
 
-* **Metapop_NetworkExp_Viz.m** visualizes output from Metapop_NetworkExp.m
+* **Metapop_NetworkExp_Viz.m** analyzes and visualizes output from Metapop_NetworkExp.m
 
 * **Metapop_HeterogeneityResponsiveness.m** runs simulations with heterogeneous patch responsiveness (i.e. heterogeneous gamma-values)
 
 * **Metapop_HeterogeneityImportThreshold.m** runs simulations with heterogeneous patch import demand thresholds (i.e. heterogeneous beta_I-values)
 
-* **Metapop_HeterogeneityExp_Viz.m** visualizes output from Metapop_HeterogeneityResponsiveness.m and Metapop_HeterogeneityImportThreshold.m
+* **Metapop_HeterogeneityExp_Viz.m** analyzes and visualizes output from Metapop_HeterogeneityResponsiveness.m and Metapop_HeterogeneityImportThreshold.m
 
-* **Metapop_HeterogeneityExp_betaprop_Viz.m** visualizes output from Metapop_HeterogeneityImportThreshold.m across a broader range of values for the percent of patches with high (vs. low) import demand thresholds
+* **Metapop_HeterogeneityExp_betaprop_Viz.m** analyzes and visualizes output from Metapop_HeterogeneityImportThreshold.m across a broader range of values for the percent of patches with high (vs. low) import demand thresholds
 
 ## Input files
 
