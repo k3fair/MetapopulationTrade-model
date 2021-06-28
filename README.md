@@ -1,7 +1,7 @@
 # MetapopulationTrade-Model
 Simulation, model fitting, analysis and visualization code for manuscript by Fair, Bauch, and Anand (2021). Model describes a system where agricultural land area, food supply, and human population growth are coupled. Associated preprint is posted at ???.
 
-To run a set of simulations make all required option selections (detailed within each script) and launch the appropriate script.
+To run a set of simulations make all required option selections (detailed within each script) and launch the appropriate script. Expected runtime varies between scripts, but an individual simulation should run within a few seconds.
 
 All data needed to run scripts are included in the "InputFiles" folder.
 
@@ -9,23 +9,23 @@ All data needed to run scripts are included in the "InputFiles" folder.
 
 * **Metapop_Globalfit.m** runs global paramter fitting under low & high yield scenarios.
 
-* **Metapop_Globalfit_Viz.m** analyzes and visualizes output from Metapop_Globalfit.m
+* **Metapop_Globalfit_Viz.R** analyzes and visualizes output from Metapop_Globalfit.m
 
 * **Metapop_ParameterPlanes.m** runs simulations sampling different points in the parameter plane for either (beta, gamma) or (beta_A, beta_I)
 
-* **Metapop_ParameterPlanes_Viz.m** analyzes and visualizes output from Metapop_ParameterPlanes.m
+* **Metapop_ParameterPlanes_Viz.R** analyzes and visualizes output from Metapop_ParameterPlanes.m
 
 * **Metapop_NetworkExp.m** runs simulations on networks with different densities and rewiring probabilities.
 
-* **Metapop_NetworkExp_Viz.m** analyzes and visualizes output from Metapop_NetworkExp.m
+* **Metapop_NetworkExp_Viz.R** analyzes and visualizes output from Metapop_NetworkExp.m
 
 * **Metapop_HeterogeneityResponsiveness.m** runs simulations with heterogeneous patch responsiveness (i.e. heterogeneous gamma-values)
 
 * **Metapop_HeterogeneityImportThreshold.m** runs simulations with heterogeneous patch import demand thresholds (i.e. heterogeneous beta_I-values)
 
-* **Metapop_HeterogeneityExp_Viz.m** analyzes and visualizes output from Metapop_HeterogeneityResponsiveness.m and Metapop_HeterogeneityImportThreshold.m
+* **Metapop_HeterogeneityExp_Viz.R** analyzes and visualizes output from Metapop_HeterogeneityResponsiveness.m and Metapop_HeterogeneityImportThreshold.m
 
-* **Metapop_HeterogeneityExp_betaprop_Viz.m** analyzes and visualizes output from Metapop_HeterogeneityImportThreshold.m across a broader range of values for the percent of patches with high (vs. low) import demand thresholds
+* **Metapop_HeterogeneityExp_betaprop_Viz.R** analyzes and visualizes output from Metapop_HeterogeneityImportThreshold.m across a broader range of values for the percent of patches with high (vs. low) import demand thresholds
 
 ## Input files
 
@@ -53,6 +53,10 @@ All data needed to run scripts are included in the "InputFiles" folder.
 
 ## Installation guides
 
-All software should install within a few minutes on a standard computer, the versions listed here are those the scripts have been tested on.
+Matlab should install within a few hours on a standard computer, R/Rstudio should both install within a few minutes. The versions listed here are those the scripts have been tested on.
 
  * MATLAB R2016b https://www.mathworks.com/products/matlab.html
+
+ * R Version 4.0.3 https://www.r-project.org/
+
+ * R Studio Version 1.2.5019 (IDE for R) https://rstudio.com/
